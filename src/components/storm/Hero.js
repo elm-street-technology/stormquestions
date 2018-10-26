@@ -19,10 +19,9 @@ const Hero = ({ classes, className }) => (
       </div>
       <div className={classes.heroRight}>
         <video
+          className={classes.video}
           controls
           src="https://youtu.be/fSTdAzcQIB8"
-          width="560"
-          height="360"
         >
           Sorry, your browser doesn't support embedded videos.
         </video>
@@ -46,6 +45,15 @@ const styles = (theme) => ({
   },
   heroLeft: {
     paddingTop: "20px",
+  },
+  video: {
+    width: "460px",
+    height: "260px",
+
+    [theme.breakpoints[900]]: {
+      width: "560px",
+      height: "360px",
+    },
   },
   heading: {
     color: theme.colors.black,
