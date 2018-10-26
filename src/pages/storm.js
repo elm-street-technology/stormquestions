@@ -9,10 +9,11 @@ const Storm = ({ classes }) => {
     <ThemeProvider
       theme={{
         colors: {
-          primary: "blue",
-          secondary: "red",
-          tertiary: "gray",
-          quaternary: "purple",
+          primary: "#4652AF",
+          secondary: "#68FBD0",
+          gray100: "#f4f4f4",
+          gray600: "#465568",
+          black: "#1F2E41",
         },
       }}
     >

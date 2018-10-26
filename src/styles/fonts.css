@@ -1,1 +1,6 @@
-/* TODO */
+@font-face {
+  font-family: "League Spartan";
+  font-style: bold;
+  font-weight: 700;
+  src: url("./LeagueSpartan-Bold.otf") format("woff2");
+}
