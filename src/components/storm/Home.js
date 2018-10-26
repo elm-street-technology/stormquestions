@@ -4,6 +4,9 @@ import Header from "./Header";
 import Hero from "./Hero";
 import Introduction from "./Introduction";
 import Resources from "./Resources";
+import FaqsHeading from "./FaqsHeading";
+import FaqCard from "./FaqCard";
+import faqData from "../../data/faqData";
 
 const Home = ({ children, classes }) => {
   return (
@@ -18,6 +21,21 @@ const Home = ({ children, classes }) => {
         <Introduction />
         <div className={classes.resourceBgContainer}>
           <Resources />
+        </div>
+        <div className={classes.faqBgContainer}>
+          <div className={classes.faqContainer}>
+            <FaqsHeading />
+            {faqData.map((faq, i) => {
+              return (
+                <FaqCard
+                  key={i}
+                  tagline={faq.tagline}
+                  title={faq.title}
+                  description={faq.description}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>
@@ -74,6 +92,21 @@ const styles = (theme) => ({
     right: "50%",
     marginLeft: "-50vw",
     marginRight: "-50vw",
+  },
+  faqBgContainer: {
+    backgroundColor: theme.colors.gray100,
+    width: "100vw",
+    position: "relative",
+    left: "50%",
+    right: "50%",
+    marginLeft: "-50vw",
+    marginRight: "-50vw",
+  },
+  faqContainer: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    padding: "60px 0px",
   },
 });
 
