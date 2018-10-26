@@ -2,6 +2,8 @@ import React from "react";
 import withStyles from "elevate-ui/withStyles";
 import Header from "./Header";
 import Hero from "./Hero";
+import Introduction from "./Introduction";
+import Resources from "./Resources";
 
 const Home = ({ children, classes }) => {
   return (
@@ -12,6 +14,10 @@ const Home = ({ children, classes }) => {
           <div className={classes.heroContainer}>
             <Hero />
           </div>
+        </div>
+        <Introduction />
+        <div className={classes.resourceBgContainer}>
+          <Resources />
         </div>
       </div>
     </div>
@@ -54,11 +60,20 @@ const styles = (theme) => ({
   heroContainer: {
     maxWidth: "1080px",
     margin: "auto",
-    padding: "60px 14px 60px",
+    padding: "100px 0px",
   },
   heading: {
     fontFamily: "League Spartan",
     color: theme.colors.black,
+  },
+  resourceBgContainer: {
+    backgroundColor: theme.colors.gray600,
+    width: "100vw",
+    position: "relative",
+    left: "50%",
+    right: "50%",
+    marginLeft: "-50vw",
+    marginRight: "-50vw",
   },
 });
 

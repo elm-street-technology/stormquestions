@@ -39,7 +39,7 @@ const styles = (theme) => ({
   inner: {
     display: "flex",
     justifyContent: "space-between",
-    padding: "30px 0px",
+    padding: "20px 0px",
     alignItems: "center",
   },
   logo: {
