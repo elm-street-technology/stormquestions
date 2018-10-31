@@ -7,6 +7,8 @@ import Resources from "./Resources";
 import FaqsHeading from "./FaqsHeading";
 import FaqCard from "./FaqCard";
 import faqData from "../../data/faqData";
+import PrimaryCTA from "./PrimaryCTA";
+import ServiceProviders from "./ServiceProviders";
 
 const Home = ({ children, classes }) => {
   return (
@@ -35,6 +37,12 @@ const Home = ({ children, classes }) => {
                 />
               );
             })}
+          </div>
+        </div>
+        <PrimaryCTA />
+        <div className={classes.serviceBgContainer}>
+          <div className={classes.serviceContainer}>
+            <ServiceProviders />
           </div>
         </div>
       </div>
@@ -107,6 +115,22 @@ const styles = (theme) => ({
     flexDirection: "column",
     alignItems: "center",
     padding: "60px 0px",
+  },
+  serviceBgContainer: {
+    backgroundColor: theme.colors.primary,
+    width: "100vw",
+    position: "relative",
+    left: "50%",
+    right: "50%",
+    marginLeft: "-50vw",
+    marginRight: "-50vw",
+  },
+  serviceContainer: {
+    width: "100%",
+    alignItems: "center",
+    display: "flex",
+    padding: "80px 12px",
+    flexDirection: "column",
   },
 });
 

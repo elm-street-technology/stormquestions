@@ -5,29 +5,27 @@ import withStyles from "elevate-ui/withStyles";
 const Resources = ({ classes, className }) => (
   <div className={classNames(classes.root, className)}>
     <div className={classes.container}>
-      <div className={classes.inner}>
-        <h1 className={classes.heading}>Resources</h1>
-        <p className={classes.paragraph}>
-          If you have an insurance company representative or Independent
-          Adjuster coming to your property, you should probably contact a{" "}
-          <span className={classes.bold}>Public Insurance Adjuster</span> to
-          assist you.
-        </p>
-        <p className={classes.paragraph}>
-          <span className={classes.bold}>Public Insurance Adjusters</span> are
-          the only entity other than a lawyer that can legally assist you (and
-          they ONLY represent you) with your claim filing and dealing with the
-          insurance company adjusters.
-        </p>
-        <h3 className={classes.closing}>
-          Send an email to {""}
-          <a href="mailto:AllStormQuestions@gmail.com" className={classes.link}>
-            AllStormQuestions@gmail.com
-          </a>{" "}
-          and we will have a licensed, Public Insurance Adjuster contact you
-          immediately.
-        </h3>
-      </div>
+      <h1 className={classes.heading}>Resources</h1>
+      <p className={classes.paragraph}>
+        If you have an insurance company representative or Independent Adjuster
+        coming to your property, you should probably contact a{" "}
+        <span className={classes.bold}>Public Insurance Adjuster</span> to
+        assist you.
+      </p>
+      <p className={classes.paragraph}>
+        <span className={classes.bold}>Public Insurance Adjusters</span> are the
+        only entity other than a lawyer that can legally assist you (and they
+        ONLY represent you) with your claim filing and dealing with the
+        insurance company adjusters.
+      </p>
+      <h3 className={classes.closing}>
+        Send an email to {""}
+        <a href="mailto:AllStormQuestions@gmail.com" className={classes.link}>
+          AllStormQuestions@gmail.com
+        </a>{" "}
+        and we will have a licensed, Public Insurance Adjuster contact you
+        immediately.
+      </h3>
     </div>
   </div>
 );
@@ -42,6 +40,7 @@ const styles = (theme) => ({
     display: "flex",
     padding: "60px 0px",
     maxWidth: "680px",
+    flexDirection: "column",
   },
   heading: {
     color: "#fff",
@@ -49,10 +48,6 @@ const styles = (theme) => ({
     fontFamily: "League Spartan",
     fontSize: "26px",
     paddingBottom: "18px",
-  },
-  inner: {
-    display: "flex",
-    flexDirection: "column",
   },
   paragraph: {
     textShadow: "0px 2px 4px rgba(0, 0, 0, 0.10)",

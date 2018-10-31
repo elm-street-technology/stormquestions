@@ -8,7 +8,12 @@ const FaqCard = ({ classes, className, tagline, title, description }) => (
       <h1 className={classes.heading}>
         {tagline} <span className={classes.title}>{title}</span>?
       </h1>
-      <p className={classes.description}>{description}</p>
+      <div
+        className={classes.description}
+        dangerouslySetInnerHTML={{
+          __html: description,
+        }}
+      />
     </div>
   </div>
 );
@@ -18,7 +23,7 @@ const styles = (theme) => ({
     display: "grid",
     gridTemplateColumns: "repeat(auto-fit, minmax(200px, 600px))",
     backgroundColor: "#fff",
-    padding: "36px",
+    padding: "36px 36px 20px 36px",
     boxShadow:
       "0 16px 16px rgba(103,110,144,.05), 0 8px 8px rgba(103,110,144,.05), 0 4px 4px rgba(103,110,144,.05), 0 2px 2px rgba(103,110,144,.05)",
     borderRadius: "8px",
@@ -30,6 +35,7 @@ const styles = (theme) => ({
     flexDirection: "column",
   },
   heading: {
+    colors: theme.colors.black,
     fontSize: "20px",
     paddingBottom: "16px",
   },
@@ -39,6 +45,27 @@ const styles = (theme) => ({
   },
   description: {
     lineHeight: "1.5",
+    color: theme.colors.gray600,
+
+    "& a": {
+      color: theme.colors.primary,
+      textDecoration: "none",
+      fontWeight: "700",
+
+      "&:hover": {
+        borderBottom: `2px solid ${theme.colors.gray600}`,
+        transition: "250ms all",
+      },
+    },
+
+    "& p": {
+      paddingBottom: "16px",
+    },
+
+    "& strong": {
+      fontWeight: "700",
+      color: theme.colors.black,
+    },
   },
 });
 
