@@ -23,22 +23,27 @@ class Faqs extends Component {
     const { classes } = this.props;
     const { availableFaqs } = this.state;
     return (
-      <div className={classes.faqContainer}>
-        <FaqsHeading />
-        {faqData.slice(0, availableFaqs).map((faq, i) => (
-          <FaqCard
-            key={i}
-            tagline={faq.tagline}
-            title={faq.title}
-            description={faq.description}
-          />
-        ))}
-        <div className={classes.btnContainer}>
-          {faqData.length > availableFaqs ? (
-            <button className={classes.btn} onClick={this.handleLoadFaqs}>
-              Load more
-            </button>
-          ) : null}
+      <div className={classes.container}>
+        <div className={classes.faqContainer}>
+          <FaqsHeading />
+          {faqData.slice(0, availableFaqs).map((faq, i) => (
+            <FaqCard
+              key={i}
+              tagline={faq.tagline}
+              title={faq.title}
+              description={faq.description}
+            />
+          ))}
+          <div className={classes.btnContainer}>
+            {faqData.length > availableFaqs ? (
+              <button
+                className={classes.loadMoreBtn}
+                onClick={this.handleLoadFaqs}
+              >
+                Load more
+              </button>
+            ) : null}
+          </div>
         </div>
       </div>
     );
@@ -46,13 +51,30 @@ class Faqs extends Component {
 }
 
 export default withStyles((theme) => ({
-  root: {},
-  faqContainer: {
+  container: {
     backgroundColor: theme.colors.gray100,
+  },
+  faqContainer: {
     margin: "auto",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     padding: "60px 0px",
+    maxWidth: "680px",
+  },
+  btnContainer: {
+    padding: "20px 14px",
+    maxWidth: "680px",
+    width: "100%",
+  },
+  loadMoreBtn: {
+    width: "100%",
+    color: "#fff",
+    fontSize: "15px",
+    padding: "12px 0px",
+    letterSpacing: ".3px",
+    fontWeight: "600",
+    borderRadius: "6px",
+    backgroundColor: theme.colors.gray600,
   },
 }))(Faqs);
