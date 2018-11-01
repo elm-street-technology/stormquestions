@@ -101,7 +101,11 @@ const styles = (theme) => ({
   heroContainer: {
     maxWidth: "1080px",
     margin: "auto",
-    padding: "100px 0px",
+    padding: "50px 0px",
+
+    [theme.breakpoints[900]]: {
+      padding: "100px 0px",
+    },
   },
   heading: {
     fontFamily: "League Spartan",
