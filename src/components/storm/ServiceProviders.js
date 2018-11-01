@@ -8,13 +8,14 @@ const Resources = ({ classes, className }) => (
       <h1 className={classes.heading}>Recommended Service Providers</h1>
       {serviceData.map((service, i) => {
         return (
-          <div>
-            <h2 key={i} className={classes.subHeading}>
-              {service.title}
-            </h2>
-            <p key={i} className={classes.paragraph}>
-              {service.description}
-            </p>
+          <div key={i}>
+            <h2 className={classes.subHeading}>{service.title}</h2>
+            <div
+              className={classes.paragraph}
+              dangerouslySetInnerHTML={{
+                __html: service.description,
+              }}
+            />
           </div>
         );
       })}
@@ -28,11 +29,11 @@ const styles = (theme) => ({
     textShadow: "0px 2px 4px rgba(0, 0, 0, .15)",
     fontFamily: "League Spartan",
     fontSize: "26px",
-    paddingBottom: "28px",
+    paddingBottom: "40px",
   },
   subHeading: {
     color: "#fff",
-    paddingBottom: "12px",
+    paddingBottom: "6px",
     fontSize: "20px",
     fontWeight: "700",
     textShadow: "0px 2px 4px rgba(0, 0, 0, 0.15)",
@@ -43,7 +44,19 @@ const styles = (theme) => ({
     fontWeight: "400",
     fontSize: "21px",
     lineHeight: "1.4",
-    paddingBottom: "28px",
+    paddingBottom: "32px",
+
+    "& a": {
+      textShadow: "0px 2px 4px rgba(0, 0, 0, 0.10)",
+      color: theme.colors.secondary,
+      textDecoration: "none",
+      fontWeight: "700",
+
+      "&:hover": {
+        borderBottom: "2px solid #DCF6F5",
+        transition: "250ms all",
+      },
+    },
   },
   bold: {
     color: "#DCF6F5",

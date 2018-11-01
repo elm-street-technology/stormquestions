@@ -38,7 +38,7 @@ const styles = (theme) => ({
   },
   container: {
     display: "flex",
-    padding: "60px 0px",
+    padding: "60px 12px",
     maxWidth: "680px",
     flexDirection: "column",
   },

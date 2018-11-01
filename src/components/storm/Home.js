@@ -8,7 +8,10 @@ import FaqsHeading from "./FaqsHeading";
 import FaqCard from "./FaqCard";
 import faqData from "../../data/faqData";
 import PrimaryCTA from "./PrimaryCTA";
+import BlogCard from "./BlogCard";
+import BlogCardGrid from "./BlogCardGrid";
 import ServiceProviders from "./ServiceProviders";
+import postData from "../../data/postData";
 
 const Home = ({ children, classes }) => {
   return (
@@ -45,6 +48,18 @@ const Home = ({ children, classes }) => {
             <ServiceProviders />
           </div>
         </div>
+        <h1 className={classes.blogHeading}>Blog</h1>
+        <BlogCardGrid>
+          {postData.map((post) => (
+            <BlogCard
+              key={post.title}
+              image={post.image}
+              title={post.title}
+              date={post.publishDate}
+              excerpt={post.excerpt}
+            />
+          ))}
+        </BlogCardGrid>
       </div>
     </div>
   );
@@ -129,8 +144,15 @@ const styles = (theme) => ({
     width: "100%",
     alignItems: "center",
     display: "flex",
-    padding: "80px 12px",
+    padding: "80px 12px 40px",
     flexDirection: "column",
+  },
+  blogHeading: {
+    paddingTop: "80px",
+    paddingBottom: "10px",
+    textAlign: "center",
+    fontSize: "30px",
+    fontFamily: "League Spartan",
   },
 });
 
