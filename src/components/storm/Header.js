@@ -1,7 +1,6 @@
 import React from "react";
 import classNames from "classnames";
 import withStyles from "elevate-ui/withStyles";
-import Button from "elevate-ui/Button";
 import logo from "../../images/logo.png";
 
 const Header = ({ classes, className }) => (
@@ -18,7 +17,7 @@ const Header = ({ classes, className }) => (
               Log in
             </a>
           </div>
-          <Button className={classes.button}>Sign up</Button>
+          <button className={classes.button}>Sign up</button>
         </div>
       </div>
     </div>
@@ -65,7 +64,13 @@ const styles = (theme) => ({
     color: "inherit",
   },
   button: {
-    letterSpacing: ".3px",
+    color: theme.colors.primary,
+    fontSize: "14px",
+    fontWeight: "700",
+    letterSpacing: ".5px",
+    border: `3px solid ${theme.colors.primary}`,
+    borderRadius: "32px",
+    padding: "10px 24px",
   },
   logoImage: {
     width: "26px",

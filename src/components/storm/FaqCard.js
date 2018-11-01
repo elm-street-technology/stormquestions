@@ -35,7 +35,7 @@ const styles = (theme) => ({
     flexDirection: "column",
   },
   heading: {
-    colors: theme.colors.black,
+    color: theme.colors.black,
     fontSize: "20px",
     paddingBottom: "16px",
   },

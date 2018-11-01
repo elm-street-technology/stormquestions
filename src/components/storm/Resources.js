@@ -32,15 +32,16 @@ const Resources = ({ classes, className }) => (
 
 const styles = (theme) => ({
   root: {
-    display: "flex",
+    backgroundColor: theme.colors.gray600,
     width: "100%",
     justifyContent: "center",
   },
   container: {
     display: "flex",
+    flexDirection: "column",
     padding: "60px 12px",
     maxWidth: "680px",
-    flexDirection: "column",
+    margin: "auto",
   },
   heading: {
     color: "#fff",

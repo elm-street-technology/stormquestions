@@ -22,6 +22,34 @@ const serviceData = [
     description:
       "<p><a href='www.floridadisaster.org/shelter-status/' target='_blank'>www.floridadisaster.org/shelter-status/</a></p>",
   },
+  {
+    title: "Florida Highway Conditions:",
+    description:
+      "<p><a href='www.flhsmv.gov/fhp/traffic/live_traffic_feed.html' target='_blank'>www.flhsmv.gov/fhp/traffic/live_traffic_feed.html</a>, or dial 5-1-1 or *FHP (347)</p>",
+  },
+  {
+    title: "Florida Elder Affairs Hotline",
+    description:
+      "<p>1-800-96-ELDER (1-800-963-5337) or <a href='http://elderaffairs.state.fl.us/' target='_blank'>http://elderaffairs.state.fl.us/</p>",
+  },
+  {
+    title: "Veteran Disaster Hotline",
+    description:
+      "<p><a href='www.va.gov' target='_blank'>www.va.gov</a>, 1-800-507-4571</p>",
+  },
+  {
+    title: "Disaster Distress Helpline (for emotional distress)",
+    description: "<p>1-800-985-5990 or text TalkWithUs to 66746</p>",
+  },
+  {
+    title: "Blue Tarp Roofs (Army Corps of Engineers)",
+    description: "<p>1-888-ROOF-BLU</p>",
+  },
+  {
+    title: "FEMA",
+    description:
+      "<p><a href='www.disasterassistance.gov' target='_blank'>www.disasterassistance.gov</a>, 1-800-621-FEMA (1-800-621-3362) TTY: 1-800-745-0243</p>",
+  },
 ];
 
 export default serviceData;
