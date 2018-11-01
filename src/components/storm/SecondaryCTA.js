@@ -8,7 +8,13 @@ const PrimaryCTA = ({ classes, className, tagline, title, description }) => (
       Send us a private message on GoFundMe to appeal for receiving donation
       funds.
     </div>
-    <button className={classes.button}>Go to page</button>
+    <a
+      href="https://www.gofundme.com/storm-questions-urgent-needs&rcid=r01-153962467248-cb2db2db02294c3f&pc=ot_co_campmgmt_w"
+      target="_blank"
+      className={classes.button}
+    >
+      Go to page
+    </a>
   </div>
 );
 

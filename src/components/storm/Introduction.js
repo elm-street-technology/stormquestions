@@ -58,8 +58,12 @@ const styles = (theme) => ({
   },
   container: {
     display: "flex",
-    padding: "80px 12px",
     maxWidth: "680px",
+    padding: "60px 12px",
+
+    [theme.breakpoints[600]]: {
+      padding: "80px 12px",
+    },
   },
   heading: {
     color: theme.colors.black,
@@ -88,6 +92,7 @@ const styles = (theme) => ({
     color: theme.colors.black,
     fontWeight: "700",
     fontSize: "21px",
+    lineHeight: "1.3",
   },
   link: {
     color: theme.colors.primary,
