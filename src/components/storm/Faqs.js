@@ -59,8 +59,12 @@ export default withStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    padding: "60px 0px",
+    padding: "30px 0px",
     maxWidth: "680px",
+
+    [theme.breakpoints[600]]: {
+      padding: "60px 0px",
+    },
   },
   btnContainer: {
     padding: "20px 14px",
@@ -76,5 +80,11 @@ export default withStyles((theme) => ({
     fontWeight: "600",
     borderRadius: "6px",
     backgroundColor: theme.colors.gray600,
+    opacity: ".85",
+    transition: ".3s all ease",
+
+    "&:hover": {
+      opacity: "1",
+    },
   },
 }))(Faqs);

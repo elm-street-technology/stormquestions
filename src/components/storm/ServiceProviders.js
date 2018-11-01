@@ -138,7 +138,14 @@ const styles = (theme) => ({
     letterSpacing: ".5px",
     fontWeight: "700",
     borderRadius: "6px",
-    backgroundColor: theme.colors.gray100,
+    backgroundColor: "#fff",
+    opacity: ".85",
+    transition: ".3s all ease",
+
+    "&:hover": {
+      opacity: "1",
+      backgroundColor: "#fff",
+    },
   },
 });
 

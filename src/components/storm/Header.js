@@ -70,7 +70,11 @@ const styles = (theme) => ({
     letterSpacing: ".5px",
     border: `3px solid ${theme.colors.primary}`,
     borderRadius: "32px",
-    padding: "10px 24px",
+    padding: "8px 16px",
+
+    [theme.breakpoints[600]]: {
+      padding: "10px 26px",
+    },
   },
   logoImage: {
     width: "26px",

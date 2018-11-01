@@ -39,9 +39,13 @@ const styles = (theme) => ({
   container: {
     display: "flex",
     flexDirection: "column",
-    padding: "60px 12px",
+    padding: "40px 12px",
     maxWidth: "680px",
     margin: "auto",
+
+    [theme.breakpoints[600]]: {
+      padding: "60px 12px",
+    },
   },
   heading: {
     color: "#fff",
