@@ -25,7 +25,7 @@ export default withStyles((theme) => ({
     width: "360px",
     maxWidth: "400px",
     position: "relative",
-    borderRadius: "8px",
+    borderRadius: "6px",
   },
 
   input: {
@@ -58,7 +58,7 @@ export default withStyles((theme) => ({
 
   button: {
     position: "absolute",
-    fontSize: "13px",
+    fontSize: "14px",
     fontWeight: "700",
     zIndex: "999",
     right: "0px",

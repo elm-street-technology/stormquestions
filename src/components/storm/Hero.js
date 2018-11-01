@@ -5,32 +5,38 @@ import withStyles from "elevate-ui/withStyles";
 const Hero = ({ classes, className }) => (
   <div className={classNames(classes.root, className)}>
     <div className={classes.container}>
-      <div className={classes.heroLeft}>
-        <h1 className={classes.heading}>
-          We want to <span className={classes.headingEnd}>help.</span>
-        </h1>
-        <p className={classes.subHeading}>
-          Everything we know about storms is at your disposal.
-        </p>
-        <p className={classes.headingBottom}>
-          <span className={classes.headingBottomTop}>Stay informed.</span>
-        </p>
-        <p className={classes.headingBottom}>Keep you and your family safe.</p>
-      </div>
-      <div className={classes.heroRight}>
-        <video
-          className={classes.video}
-          controls
-          src="https://youtu.be/fSTdAzcQIB8"
-        >
-          Sorry, your browser doesn't support embedded videos.
-        </video>
-        <p className={classes.headingBottomMobile}>
-          <span className={classes.headingBottomTopMobile}>Stay informed.</span>
-        </p>
-        <p className={classes.headingBottomMobile}>
-          Keep you and your family safe.
-        </p>
+      <div className={classes.inner}>
+        <div className={classes.heroLeft}>
+          <h1 className={classes.heading}>
+            We want to <span className={classes.headingEnd}>help.</span>
+          </h1>
+          <p className={classes.subHeading}>
+            Everything we know about storms is at your disposal.
+          </p>
+          <p className={classes.headingBottom}>
+            <span className={classes.headingBottomTop}>Stay informed.</span>
+          </p>
+          <p className={classes.headingBottom}>
+            Keep you and your family safe.
+          </p>
+        </div>
+        <div className={classes.heroRight}>
+          <video
+            className={classes.video}
+            controls
+            src="https://youtu.be/fSTdAzcQIB8"
+          >
+            Sorry, your browser doesn't support embedded videos.
+          </video>
+          <p className={classes.headingBottomMobile}>
+            <span className={classes.headingBottomTopMobile}>
+              Stay informed.
+            </span>
+          </p>
+          <p className={classes.headingBottomMobile}>
+            Keep you and your family safe.
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -38,14 +44,22 @@ const Hero = ({ classes, className }) => (
 
 const styles = (theme) => ({
   root: {
-    display: "flex",
     width: "100%",
+    backgroundColor: theme.colors.gray100,
+    padding: "50px 14px",
+
+    [theme.breakpoints[900]]: {
+      padding: "100px 14px",
+    },
   },
   container: {
+    margin: "auto",
+    maxWidth: "1080px",
+  },
+  inner: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
-    padding: "0px 14px 0px",
     maxWidth: "1080px",
     width: "100%",
     margin: "auto",

@@ -58,7 +58,7 @@ const styles = (theme) => ({
   },
   container: {
     display: "flex",
-    padding: "80px 0px",
+    padding: "80px 12px",
     maxWidth: "680px",
   },
   heading: {
