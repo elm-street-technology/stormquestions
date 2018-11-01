@@ -18,7 +18,7 @@ const styles = (theme) => ({
     flexDirection: "column",
     alignItems: "center",
     textAlign: "center",
-    padding: "80px 0px",
+    padding: "50px 0px",
     backgroundColor: theme.colors.gray100,
   },
   heading: {
@@ -31,7 +31,7 @@ const styles = (theme) => ({
   subHeading: {
     color: theme.colors.gray600,
     fontSize: "21px",
-    padding: "0px 14px 30px 14px",
+    padding: "0px 14px 20px 14px",
     maxWidth: "520px",
     lineHeight: "1.4",
   },

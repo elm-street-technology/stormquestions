@@ -42,7 +42,7 @@ class Resources extends Component {
           <div className={classes.btnContainer}>
             {serviceData.length > availableResources ? (
               <button
-                className={classes.btn}
+                className={classes.loadMoreBtn}
                 onClick={this.handleLoadResources}
               >
                 Load more
@@ -127,6 +127,18 @@ const styles = (theme) => ({
       borderBottom: "2px solid #DCF6F5",
       transition: "250ms all",
     },
+  },
+  btnContainer: {
+    padding: "20px 0px",
+  },
+  loadMoreBtn: {
+    color: theme.colors.primary,
+    fontSize: "15px",
+    padding: "12px 30px",
+    letterSpacing: ".5px",
+    fontWeight: "700",
+    borderRadius: "6px",
+    backgroundColor: theme.colors.gray100,
   },
 });
 
