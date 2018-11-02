@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import withStyles from "elevate-ui/withStyles";
 import BlogCard from "./BlogCard";
-import postData from "../../data/postData";
+import postData from "../data/postData";
 
 const BlogCardGrid = ({ children, classes, className }) => {
   return (
@@ -21,17 +21,6 @@ const BlogCardGrid = ({ children, classes, className }) => {
 };
 
 export default withStyles((theme) => ({
-  "@global": {
-    body: {
-      backgroundColor: "#fff !important",
-    },
-    a: {
-      textDecoration: "none !important",
-      "&:hover": {
-        textDecoration: "none !important",
-      },
-    },
-  },
   root: {
     display: "grid",
     gridColumnGap: "36px",

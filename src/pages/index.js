@@ -1,6 +1,6 @@
 import React from "react";
 import ThemeProvider from "elevate-ui/ThemeProvider";
-import Home from "../components/storm/Home";
+import Home from "../components/Home";
 
 import "../styles/fonts.css";
 

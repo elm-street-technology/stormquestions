@@ -33,6 +33,12 @@ const styles = (theme) => ({
         "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
       backgroundColor: "#fff",
     },
+    a: {
+      textDecoration: "none !important",
+      "&:hover": {
+        textDecoration: "none !important",
+      },
+    },
   },
   root: {
     display: "flex",
