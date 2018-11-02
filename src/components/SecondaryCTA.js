@@ -1,7 +1,7 @@
 import React from "react";
 import withStyles from "elevate-ui/withStyles";
 
-const PrimaryCTA = ({ classes, className, tagline, title, description }) => (
+const PrimaryCTA = ({ classes, tagline, title, description }) => (
   <div className={classes.root}>
     <div className={classes.heading}>Receive Donation Funds</div>
     <div className={classes.subHeading}>
@@ -11,6 +11,7 @@ const PrimaryCTA = ({ classes, className, tagline, title, description }) => (
     <a
       href="https://www.gofundme.com/storm-questions-urgent-needs&rcid=r01-153962467248-cb2db2db02294c3f&pc=ot_co_campmgmt_w"
       target="_blank"
+      rel="noopener noreferrer"
       className={classes.button}
     >
       Go to page

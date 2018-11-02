@@ -1,9 +1,8 @@
 import React from "react";
-import classNames from "classnames";
 import withStyles from "elevate-ui/withStyles";
 
-const Introduction = ({ classes, className }) => (
-  <div className={classNames(classes.root, className)}>
+const Introduction = ({ classes }) => (
+  <div className={classes.root}>
     <div className={classes.container}>
       <div className={classes.inner}>
         <h1 className={classes.heading}>Why We're here</h1>

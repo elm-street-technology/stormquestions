@@ -72,32 +72,6 @@ export default withStyles((theme) => ({
     fontSize: ".875rem",
     color: "#504E62",
   },
-  postTagsContainer: {
-    display: "flex",
-    flexWrap: "wrap",
-    alignItems: "center",
-    marginBottom: "30px",
-  },
-  postTags: {
-    marginRight: "6px",
-    marginBottom: "4px",
-    fontSize: "10px",
-    fontWeight: "800",
-    color: "#A9A8B6",
-    letterSpacing: ".5px",
-    padding: "8px",
-    borderRadius: "16px",
-    backgroundColor: "#ECECEC",
-    "&:hover": {
-      color: "#A9A8B6",
-      textDecoration: "none !important",
-    },
-  },
-  postTagLink: {
-    "&:hover": {
-      textDecoration: "none !important",
-    },
-  },
   postReadMore: {
     textTransform: "uppercase",
     color: theme.colors.gray600,

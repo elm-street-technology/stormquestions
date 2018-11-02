@@ -1,9 +1,8 @@
 import React from "react";
-import classNames from "classnames";
 import withStyles from "elevate-ui/withStyles";
 
-const Resources = ({ classes, className }) => (
-  <div className={classNames(classes.root, className)}>
+const Resources = ({ classes }) => (
+  <div className={classes.root}>
     <div className={classes.container}>
       <h1 className={classes.heading}>Resources</h1>
       <p className={classes.paragraph}>
@@ -65,9 +64,6 @@ const styles = (theme) => ({
   bold: {
     color: "#DCF6F5",
     fontWeight: "700",
-  },
-  underline: {
-    borderBottom: `2px solid ${theme.colors.primary}`,
   },
   closing: {
     textShadow: "0px 2px 4px rgba(0, 0, 0, .15)",

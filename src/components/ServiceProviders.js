@@ -1,59 +1,27 @@
-import React, { Component } from "react";
+import React from "react";
 import withStyles from "elevate-ui/withStyles";
 import serviceData from "../data/serviceData";
 
-class Resources extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      availableResources: 6,
-    };
-  }
-
-  handleLoadResources = () => {
-    const remainingResources =
-      serviceData.length - this.state.availableResources;
-    this.setState((state) => ({
-      availableResources: state.availableResources + remainingResources,
-    }));
-  };
-
-  render() {
-    const { classes } = this.props;
-    const { availableResources } = this.state;
-    return (
-      <div className={classes.root}>
-        <div className={classes.container}>
-          <h1 className={classes.heading}>Recommended Service Providers</h1>
-          {serviceData.slice(0, availableResources).map((service, i) => {
-            return (
-              <div key={i}>
-                <h2 className={classes.subHeading}>{service.title}</h2>
-                <div
-                  className={classes.paragraph}
-                  dangerouslySetInnerHTML={{
-                    __html: service.description,
-                  }}
-                />
-              </div>
-            );
-          })}
-          <div className={classes.btnContainer}>
-            {serviceData.length > availableResources ? (
-              <button
-                className={classes.loadMoreBtn}
-                onClick={this.handleLoadResources}
-              >
-                Load more
-              </button>
-            ) : null}
+const ServiceProviders = ({ classes }) => (
+  <div className={classes.root}>
+    <div className={classes.container}>
+      <h1 className={classes.heading}>Recommended Service Providers</h1>
+      {serviceData.map((service, i) => {
+        return (
+          <div key={i}>
+            <h2 className={classes.subHeading}>{service.title}</h2>
+            <div
+              className={classes.paragraph}
+              dangerouslySetInnerHTML={{
+                __html: service.description,
+              }}
+            />
           </div>
-        </div>
-      </div>
-    );
-  }
-}
+        );
+      })}
+    </div>
+  </div>
+);
 
 const styles = (theme) => ({
   root: {
@@ -103,50 +71,6 @@ const styles = (theme) => ({
       },
     },
   },
-  bold: {
-    color: "#DCF6F5",
-    fontWeight: "700",
-  },
-  underline: {
-    borderBottom: `2px solid ${theme.colors.primary}`,
-  },
-  closing: {
-    textShadow: "0px 2px 4px rgba(0, 0, 0, .15)",
-    lineHeight: "1.4",
-    color: "#DCF6F5",
-    fontWeight: "700",
-    fontSize: "21px",
-  },
-  link: {
-    textShadow: "0px 2px 4px rgba(0, 0, 0, 0.10)",
-    color: theme.colors.secondary,
-    textDecoration: "none",
-    fontWeight: "700",
-
-    "&:hover": {
-      borderBottom: "2px solid #DCF6F5",
-      transition: "250ms all",
-    },
-  },
-  btnContainer: {
-    padding: "20px 0px",
-  },
-  loadMoreBtn: {
-    color: theme.colors.primary,
-    fontSize: "15px",
-    padding: "12px 30px",
-    letterSpacing: ".5px",
-    fontWeight: "700",
-    borderRadius: "6px",
-    backgroundColor: "#fff",
-    opacity: ".85",
-    transition: ".3s all ease",
-
-    "&:hover": {
-      opacity: "1",
-      backgroundColor: "#fff",
-    },
-  },
 });
 
-export default withStyles(styles)(Resources);
+export default withStyles(styles)(ServiceProviders);

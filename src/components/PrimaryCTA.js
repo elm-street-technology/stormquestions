@@ -2,7 +2,7 @@ import React from "react";
 import withStyles from "elevate-ui/withStyles";
 import CTAForm from "./CTAForm";
 
-const PrimaryCTA = ({ classes, className, tagline, title, description }) => (
+const PrimaryCTA = ({ classes, tagline, title, description }) => (
   <div className={classes.root}>
     <div className={classes.heading}>Have a question we didn’t answer?</div>
     <div className={classes.subHeading}>

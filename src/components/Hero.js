@@ -20,14 +20,14 @@ const Hero = ({ classes, className }) => (
             Keep you and your family safe.
           </p>
         </div>
-        <div className={classes.heroRight}>
-          <video
+        <div>
+          <iframe
             className={classes.video}
             controls
-            src="https://youtu.be/fSTdAzcQIB8"
+            src="https://www.youtube.com/embed/fSTdAzcQIB8?feature=oembed"
           >
             Sorry, your browser doesn't support embedded videos.
-          </video>
+          </iframe>
           <p className={classes.headingBottomMobile}>
             <span className={classes.headingBottomTopMobile}>
               Stay informed.
@@ -46,15 +46,16 @@ const styles = (theme) => ({
   root: {
     width: "100%",
     backgroundColor: theme.colors.gray100,
-    padding: "50px 14px",
 
     [theme.breakpoints[900]]: {
       padding: "100px 14px",
     },
   },
   container: {
-    margin: "auto",
+    padding: "50px 14px",
     maxWidth: "1080px",
+    width: "100%",
+    margin: "auto",
   },
   inner: {
     display: "flex",
@@ -72,17 +73,24 @@ const styles = (theme) => ({
   },
   heroLeft: {
     paddingTop: "20px",
+    paddingRight: "12px",
   },
 
   video: {
     maxWidth: "600px",
     width: "100%",
     paddingBottom: "30px",
+    height: "300px",
+
+    [theme.breakpoints[600]]: {
+      paddingBottom: "0px",
+      height: "380px",
+      width: "600px",
+    },
 
     [theme.breakpoints[900]]: {
       paddingBottom: "0px",
-      width: "560px",
-      height: "360px",
+      width: "600px",
     },
   },
   heading: {
@@ -121,6 +129,7 @@ const styles = (theme) => ({
 
     [theme.breakpoints[900]]: {
       display: "flex",
+      paddingRight: "12px",
     },
   },
   headingBottomTop: {
@@ -146,6 +155,7 @@ const styles = (theme) => ({
   },
   headingBottomTopMobile: {
     fontSize: "24px",
+    paddingTop: "20px",
     color: theme.colors.black,
 
     [theme.breakpoints[900]]: {
