@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 import withStyles from "elevate-ui/withStyles";
-import logo from "../../images/logo.png";
+import logo from "../images/logo.png";
 
 const Header = ({ classes, className }) => (
   <div className={classNames(classes.root, className)}>

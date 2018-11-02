@@ -32,25 +32,12 @@ const BlogCard = ({ classes, image, title, date, excerpt }) => (
 );
 
 export default withStyles((theme) => ({
-  "@global body": {
-    backgroundColor: "#fff !important",
-    a: {
-      textDecoration: "none !important",
-      "&:hover": {
-        textDecoration: "none !important",
-      },
-    },
-  },
   root: {
     display: "flex",
     flexDirection: "column",
     background: "#fff", // material-design 1dp
     transition: "all 200ms ease-in-out",
     borderRadius: "3px",
-  },
-  link: {
-    color: "inherit !important", // remove default `a` tag styling, along with :hover/:active/:etc.
-    textDecoration: "inherit !important", // remove default `a` tag styling, along with :hover/:active/:etc.
   },
   postImage: {
     marginBottom: "5px",

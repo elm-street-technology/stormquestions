@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import withStyles from "elevate-ui/withStyles";
-import serviceData from "../../data/serviceData";
+import serviceData from "../data/serviceData";
 
 class Resources extends Component {
   constructor(props) {

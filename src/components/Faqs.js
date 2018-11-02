@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import FaqsHeading from "./FaqsHeading";
 import FaqCard from "./FaqCard";
-import faqData from "../../data/faqData";
+import faqData from "../data/faqData";
 import withStyles from "elevate-ui/withStyles";
 
 class Faqs extends Component {
