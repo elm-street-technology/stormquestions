@@ -59,7 +59,7 @@ export default withStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    padding: "30px 0px",
+    padding: "50px 0px 30px",
     maxWidth: "680px",
 
     [theme.breakpoints[600]]: {
