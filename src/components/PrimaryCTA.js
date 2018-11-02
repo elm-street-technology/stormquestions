@@ -17,7 +17,7 @@ const styles = (theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    padding: "70px 0px",
+    padding: "70px 14px",
   },
   heading: {
     color: theme.colors.black,

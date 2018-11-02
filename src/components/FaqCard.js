@@ -47,6 +47,7 @@ const styles = (theme) => ({
     color: theme.colors.gray600,
 
     "& a": {
+      wordWrap: "break-word",
       color: theme.colors.primary,
       textDecoration: "none",
       fontWeight: "700",
