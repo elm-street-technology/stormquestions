@@ -1,9 +1,8 @@
 import React from "react";
-import classNames from "classnames";
 import withStyles from "elevate-ui/withStyles";
 
-const FaqCard = ({ classes, className, tagline, title, description }) => (
-  <div className={classNames(classes.root, className)}>
+const FaqCard = ({ classes, tagline, title, description }) => (
+  <div className={classes.root}>
     <div className={classes.container}>
       <h1 className={classes.heading}>
         {tagline} <span className={classes.title}>{title}</span>?

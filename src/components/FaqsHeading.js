@@ -1,9 +1,8 @@
 import React from "react";
-import classNames from "classnames";
 import withStyles from "elevate-ui/withStyles";
 
 const FaqsHeading = ({ classes, className }) => (
-  <div className={classNames(classes.root, className)}>
+  <div className={classes.root}>
     <div className={classes.container}>
       <h1 className={classes.heading}>Need further assistance?</h1>
       <h2 className={classes.subHeading}>
