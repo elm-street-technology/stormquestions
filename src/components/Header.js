@@ -12,12 +12,12 @@ const Header = ({ classes, className }) => (
           <div className={classes.logoText}>StormQuestions</div>
         </div>
         <div className={classes.callToAction}>
-          <div className={classes.logIn}>
+          {/* <div className={classes.logIn}>
             <a className={classes.link} href="/">
               Log in
             </a>
           </div>
-          <button className={classes.button}>Sign up</button>
+          <button className={classes.button}>Sign up</button> */}
         </div>
       </div>
     </div>
