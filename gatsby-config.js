@@ -40,7 +40,6 @@ module.exports = {
       },
     },
     "gatsby-plugin-jss",
-    "gatsby-plugin-styled-components",
     "gatsby-plugin-react-helmet",
     {
       resolve: `gatsby-transformer-remark`,

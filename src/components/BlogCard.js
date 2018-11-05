@@ -3,41 +3,41 @@ import Link from "gatsby-link";
 import withStyles from "elevate-ui/withStyles";
 
 const BlogCard = ({ classes, image, title, date, excerpt }) => (
-  <div className={classes.root}>
-    <Link to={"/"}>
-      {image ? <img src={image} className={classes.postImage} /> : null}
+  <Link to={"/"} className={classes.root}>
+    {image ? <img src={image} className={classes.postImage} /> : null}
 
-      <div className={classes.postDate}>{date}</div>
-      <div className={classes.postTitle}>{title}</div>
-      <div
-        className={classes.postDesc}
-        dangerouslySetInnerHTML={{
-          __html: excerpt,
-        }}
-      />
-      <div className={classes.postReadMore}>
-        Read more{" "}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="18"
-          height="18"
-          viewBox="0 0 24 24"
-          className={classes.icon}
-        >
-          <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
-        </svg>
-      </div>
-    </Link>
-  </div>
+    <div className={classes.postDate}>{date}</div>
+    <div className={classes.postTitle}>{title}</div>
+    <div
+      className={classes.postDesc}
+      dangerouslySetInnerHTML={{
+        __html: excerpt,
+      }}
+    />
+    <div className={classes.postReadMore}>
+      Read more{" "}
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        className={classes.icon}
+      >
+        <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+      </svg>
+    </div>
+  </Link>
 );
 
 export default withStyles((theme) => ({
   root: {
     display: "flex",
     flexDirection: "column",
-    background: "#fff", // material-design 1dp
     transition: "all 200ms ease-in-out",
-    borderRadius: "3px",
+    textDecoration: "none",
+    "&:hover": {
+      textDecoration: "none !important",
+    },
   },
   postImage: {
     marginBottom: "5px",
@@ -57,13 +57,6 @@ export default withStyles((theme) => ({
     lineHeight: "28px",
     color: theme.colors.black,
     marginBottom: "4px",
-
-    a: {
-      textDecoration: "none",
-      "&:hover": {
-        textDecoration: "none !important",
-      },
-    },
   },
   postDesc: {
     display: "flex",
