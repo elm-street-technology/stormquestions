@@ -1,10 +1,9 @@
 import React from "react";
 import ThemeProvider from "elevate-ui/ThemeProvider";
-import Home from "../components/Home";
 
 import "../styles/fonts.css";
 
-const Storm = ({ classes }) => {
+const Layout = ({ children }) => {
   return (
     <ThemeProvider
       theme={{
@@ -17,9 +16,9 @@ const Storm = ({ classes }) => {
         },
       }}
     >
-      <Home />
+      {children}
     </ThemeProvider>
   );
 };
 
-export default Storm;
+export default Layout;
