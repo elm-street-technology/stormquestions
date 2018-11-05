@@ -9,6 +9,7 @@ import PrimaryCTA from "./PrimaryCTA";
 import SecondaryCTA from "./SecondaryCTA";
 import BlogHeading from "./BlogHeading";
 import BlogCardGrid from "./BlogCardGrid";
+import ContactForm from "./ContactForm";
 import ServiceProviders from "./ServiceProviders";
 
 const Home = (classes) => (
@@ -23,6 +24,7 @@ const Home = (classes) => (
     <BlogHeading />
     <BlogCardGrid />
     <SecondaryCTA />
+    <ContactForm />
   </div>
 );
 
