@@ -1,5 +1,6 @@
 import React from "react";
 import withStyles from "elevate-ui/withStyles";
+import CTAButton from "./CTAButton";
 
 const Introduction = ({ classes }) => (
   <div className={classes.root}>
@@ -39,10 +40,7 @@ const Introduction = ({ classes }) => (
           your revenue and your business.
         </p>
         <h3 className={classes.closing}>
-          Contact us anytime at{" "}
-          <a href="mailto:AllStormQuestions@gmail.com" className={classes.link}>
-            AllStormQuestions@gmail.com
-          </a>
+          <CTAButton />
         </h3>
       </div>
     </div>
@@ -90,7 +88,7 @@ const styles = (theme) => ({
   closing: {
     color: theme.colors.black,
     fontWeight: "700",
-    fontSize: "21px",
+    // fontSize: "21px",
     lineHeight: "1.3",
   },
   link: {
