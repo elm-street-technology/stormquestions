@@ -1,76 +1,59 @@
-import React, { Component } from "react";
+import React from "react";
 import classNames from "classnames";
 import withStyles from "elevate-ui/withStyles";
 import CTAButton from "./CTAButton";
 
-class Hero extends Component {
-  scrollToBottom = () => {
-    window.scrollTo({
-      top: document.body.scrollHeight,
-      bottom: 0,
-      behavior: "auto",
-      // can be changed to behavior: "smooth" for smooth scroll effect
-    });
-  };
-
-  render() {
-    const { classes, className } = this.props;
-    console.log(window.scrollTo);
-    return (
-      <div className={classNames(classes.root, className)}>
-        <div className={classes.container}>
-          <div className={classes.inner}>
-            <div className={classes.heroLeft}>
-              <h1 className={classes.heading}>
-                We want to <span className={classes.headingEnd}>help.</span>
-              </h1>
-              <div className={classes.headingBottomContainer}>
-                <p className={classes.subHeading}>
-                  Everything we know about storms is at your disposal.
-                </p>
-                <p className={classes.headingBottom}>
-                  <span className={classes.headingBottomTop}>
-                    Stay informed.
-                  </span>
-                </p>
-                <p
-                  style={{ marginBottom: "30px" }}
-                  className={classes.headingBottom}
-                >
-                  Keep you and your family safe.
-                </p>
-                <CTAButton />
-              </div>
-            </div>
-            <div>
-              <iframe
-                className={classes.video}
-                controls
-                src="https://www.youtube.com/embed/fSTdAzcQIB8?feature=oembed"
-              >
-                Sorry, your browser doesn't support embedded videos.
-              </iframe>
-              <div className={classes.headingBottomMobileContainer}>
-                <p className={classes.headingBottomMobile}>
-                  <span className={classes.headingBottomTopMobile}>
-                    Stay informed.
-                  </span>
-                </p>
-                <p
-                  style={{ marginBottom: "20px" }}
-                  className={classes.headingBottomMobile}
-                >
-                  Keep you and your family safe.
-                </p>
-                <CTAButton className={classes.headingBottomMobile} />
-              </div>
-            </div>
+const Hero = ({ classes, className }) => (
+  <div className={classNames(classes.root, className)}>
+    <div className={classes.container}>
+      <div className={classes.inner}>
+        <div className={classes.heroLeft}>
+          <h1 className={classes.heading}>
+            We want to <span className={classes.headingEnd}>help.</span>
+          </h1>
+          <div className={classes.headingBottomContainer}>
+            <p className={classes.subHeading}>
+              Everything we know about storms is at your disposal.
+            </p>
+            <p className={classes.headingBottom}>
+              <span className={classes.headingBottomTop}>Stay informed.</span>
+            </p>
+            <p
+              style={{ marginBottom: "30px" }}
+              className={classes.headingBottom}
+            >
+              Keep you and your family safe.
+            </p>
+            <CTAButton />
+          </div>
+        </div>
+        <div>
+          <iframe
+            className={classes.video}
+            controls
+            src="https://www.youtube.com/embed/fSTdAzcQIB8?feature=oembed"
+          >
+            Sorry, your browser doesn't support embedded videos.
+          </iframe>
+          <div className={classes.headingBottomMobileContainer}>
+            <p className={classes.headingBottomMobile}>
+              <span className={classes.headingBottomTopMobile}>
+                Stay informed.
+              </span>
+            </p>
+            <p
+              style={{ marginBottom: "20px" }}
+              className={classes.headingBottomMobile}
+            >
+              Keep you and your family safe.
+            </p>
+            <CTAButton className={classes.headingBottomMobile} />
           </div>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  </div>
+);
 
 const styles = (theme) => ({
   root: {
