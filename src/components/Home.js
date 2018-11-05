@@ -10,6 +10,7 @@ import SecondaryCTA from "./SecondaryCTA";
 import BlogHeading from "./BlogHeading";
 import BlogCard from "./BlogCard";
 import BlogCardGrid from "./BlogCardGrid";
+import ContactForm from "./ContactForm";
 import ServiceProviders from "./ServiceProviders";
 
 const Home = ({ classes, posts, tags, test }) => (
@@ -37,6 +38,7 @@ const Home = ({ classes, posts, tags, test }) => (
         ))}
     </BlogCardGrid>
     <SecondaryCTA />
+    <ContactForm />
   </div>
 );
 
