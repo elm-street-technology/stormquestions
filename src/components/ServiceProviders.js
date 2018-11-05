@@ -77,6 +77,7 @@ const styles = (theme) => ({
   },
   subHeading: {
     color: "#fff",
+    lineHeight: "1.4",
     paddingBottom: "6px",
     fontSize: "20px",
     fontWeight: "700",

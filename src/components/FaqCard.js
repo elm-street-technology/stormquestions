@@ -42,6 +42,7 @@ const styles = (theme) => ({
   title: {
     color: theme.colors.primary,
     fontWeight: "700",
+    lineHeight: "1.3",
   },
   description: {
     lineHeight: "1.5",
