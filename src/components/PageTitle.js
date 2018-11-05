@@ -11,9 +11,12 @@ export default withStyles((theme) => ({
     width: "100%",
     lineHeight: "1.2",
     fontSize: "28px",
-    color: "#2E2E35",
+    color: theme.colors.black,
     fontWeight: "800",
-    marginBottom: "32px",
+    marginTop: "80px",
+    marginBottom: "30px",
+    fontFamily:
+      "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
 
     [theme.breakpoints[600]]: {
       fontSize: "36px",

@@ -1,13 +1,13 @@
 import React from "react";
 import classNames from "classnames";
 import withStyles from "elevate-ui/withStyles";
-import BlogCard from "./BlogCard";
-import postData from "../data/postData";
+// import BlogCard from "./BlogCard";
+// import postData from "../data/postData";
 
 const BlogCardGrid = ({ children, classes, className }) => {
   return (
     <div className={classNames(classes.root, className)}>
-      {postData.map((post) => (
+      {/* {postData.map((post) => (
         <BlogCard
           key={post.title}
           image={post.image}
@@ -15,7 +15,8 @@ const BlogCardGrid = ({ children, classes, className }) => {
           date={post.publishDate}
           excerpt={post.excerpt}
         />
-      ))}
+      ))} */}
+      {children}
     </div>
   );
 };

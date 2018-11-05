@@ -8,10 +8,11 @@ import Faqs from "./Faqs";
 import PrimaryCTA from "./PrimaryCTA";
 import SecondaryCTA from "./SecondaryCTA";
 import BlogHeading from "./BlogHeading";
+import BlogCard from "./BlogCard";
 import BlogCardGrid from "./BlogCardGrid";
 import ServiceProviders from "./ServiceProviders";
 
-const Home = (classes) => (
+const Home = ({ classes, posts, tags, test }) => (
   <div className={classes.root}>
     <Header />
     <Hero />
@@ -21,7 +22,20 @@ const Home = (classes) => (
     <PrimaryCTA />
     <ServiceProviders />
     <BlogHeading />
-    <BlogCardGrid />
+    <BlogCardGrid>
+      {posts &&
+        posts.map(({ node: post }) => (
+          <BlogCard
+            tags={tags}
+            key={post.id}
+            slug={post.slug}
+            image={post.heroImage}
+            title={post.title}
+            date={post.publishDate}
+            excerpt={post.body}
+          />
+        ))}
+    </BlogCardGrid>
     <SecondaryCTA />
   </div>
 );
