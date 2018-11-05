@@ -11,12 +11,14 @@ const Header = ({ classes }) => (
           <div className={classes.logoText}>StormQuestions</div>
         </div>
         <div className={classes.callToAction}>
-          {/* <div className={classes.logIn}>
-            <a className={classes.link} href="/">
-              Log in
-            </a>
-          </div>
-          <button className={classes.button}>Sign up</button> */}
+          <a
+            href="https://www.gofundme.com/stormquestions"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={classes.button}
+          >
+            Donate
+          </a>
         </div>
       </div>
     </div>
