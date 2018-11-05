@@ -1,6 +1,6 @@
 import React from "react";
 import withStyles from "elevate-ui/withStyles";
-import CTAForm from "./CTAForm";
+import CTAButton from "./CTAButton";
 
 const PrimaryCTA = ({ classes, tagline, title, description }) => (
   <div className={classes.root}>
@@ -8,7 +8,7 @@ const PrimaryCTA = ({ classes, tagline, title, description }) => (
     <div className={classes.subHeading}>
       Provide your email and we'll be in touch shortly
     </div>
-    <CTAForm />
+    <CTAButton />
   </div>
 );
 

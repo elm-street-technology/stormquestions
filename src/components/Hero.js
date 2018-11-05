@@ -1,46 +1,76 @@
-import React from "react";
+import React, { Component } from "react";
 import classNames from "classnames";
 import withStyles from "elevate-ui/withStyles";
+import CTAButton from "./CTAButton";
 
-const Hero = ({ classes, className }) => (
-  <div className={classNames(classes.root, className)}>
-    <div className={classes.container}>
-      <div className={classes.inner}>
-        <div className={classes.heroLeft}>
-          <h1 className={classes.heading}>
-            We want to <span className={classes.headingEnd}>help.</span>
-          </h1>
-          <p className={classes.subHeading}>
-            Everything we know about storms is at your disposal.
-          </p>
-          <p className={classes.headingBottom}>
-            <span className={classes.headingBottomTop}>Stay informed.</span>
-          </p>
-          <p className={classes.headingBottom}>
-            Keep you and your family safe.
-          </p>
-        </div>
-        <div>
-          <iframe
-            className={classes.video}
-            controls
-            src="https://www.youtube.com/embed/fSTdAzcQIB8?feature=oembed"
-          >
-            Sorry, your browser doesn't support embedded videos.
-          </iframe>
-          <p className={classes.headingBottomMobile}>
-            <span className={classes.headingBottomTopMobile}>
-              Stay informed.
-            </span>
-          </p>
-          <p className={classes.headingBottomMobile}>
-            Keep you and your family safe.
-          </p>
+class Hero extends Component {
+  scrollToBottom = () => {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      bottom: 0,
+      behavior: "auto",
+      // can be changed to behavior: "smooth" for smooth scroll effect
+    });
+  };
+
+  render() {
+    const { classes, className } = this.props;
+    console.log(window.scrollTo);
+    return (
+      <div className={classNames(classes.root, className)}>
+        <div className={classes.container}>
+          <div className={classes.inner}>
+            <div className={classes.heroLeft}>
+              <h1 className={classes.heading}>
+                We want to <span className={classes.headingEnd}>help.</span>
+              </h1>
+              <div className={classes.headingBottomContainer}>
+                <p className={classes.subHeading}>
+                  Everything we know about storms is at your disposal.
+                </p>
+                <p className={classes.headingBottom}>
+                  <span className={classes.headingBottomTop}>
+                    Stay informed.
+                  </span>
+                </p>
+                <p
+                  style={{ marginBottom: "30px" }}
+                  className={classes.headingBottom}
+                >
+                  Keep you and your family safe.
+                </p>
+                <CTAButton />
+              </div>
+            </div>
+            <div>
+              <iframe
+                className={classes.video}
+                controls
+                src="https://www.youtube.com/embed/fSTdAzcQIB8?feature=oembed"
+              >
+                Sorry, your browser doesn't support embedded videos.
+              </iframe>
+              <div className={classes.headingBottomMobileContainer}>
+                <p className={classes.headingBottomMobile}>
+                  <span className={classes.headingBottomTopMobile}>
+                    Stay informed.
+                  </span>
+                </p>
+                <p
+                  style={{ marginBottom: "20px" }}
+                  className={classes.headingBottomMobile}
+                >
+                  Keep you and your family safe.
+                </p>
+                <CTAButton className={classes.headingBottomMobile} />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-);
+    );
+  }
+}
 
 const styles = (theme) => ({
   root: {
@@ -107,17 +137,12 @@ const styles = (theme) => ({
     color: theme.colors.primary,
   },
   subHeading: {
-    display: "none",
     color: theme.colors.gray600,
     fontFamily: "League Spartan",
     fontSize: "18px",
     lineHeight: "1.5",
     maxWidth: "320px",
     paddingBottom: "80px",
-
-    [theme.breakpoints[900]]: {
-      display: "flex",
-    },
   },
   headingBottom: {
     color: theme.colors.gray600,
@@ -125,21 +150,10 @@ const styles = (theme) => ({
     fontSize: "18px",
     lineHeight: "1.5",
     maxWidth: "320px",
-    display: "none",
-
-    [theme.breakpoints[900]]: {
-      display: "flex",
-      paddingRight: "12px",
-    },
   },
   headingBottomTop: {
     fontSize: "24px",
     color: theme.colors.black,
-    display: "none",
-
-    [theme.breakpoints[900]]: {
-      display: "flex",
-    },
   },
   headingBottomMobile: {
     color: theme.colors.gray600,
@@ -148,16 +162,22 @@ const styles = (theme) => ({
     lineHeight: "1.5",
     justifyContent: "center",
     display: "flex",
-
-    [theme.breakpoints[900]]: {
-      display: "none",
-    },
   },
   headingBottomTopMobile: {
     fontSize: "24px",
     paddingTop: "20px",
     color: theme.colors.black,
+  },
+  headingBottomContainer: {
+    marginBottom: "30px",
+    flexDirection: "column",
+    display: "none",
 
+    [theme.breakpoints[900]]: {
+      display: "flex",
+    },
+  },
+  headingBottomMobileContainer: {
     [theme.breakpoints[900]]: {
       display: "none",
     },
