@@ -1,32 +1,31 @@
 import React from "react";
 import Link from "gatsby-link";
 import withStyles from "elevate-ui/withStyles";
+import TagList from "../components/TagList";
+import Img from "gatsby-image";
 
-const BlogCard = ({ classes, image, title, date, excerpt }) => (
-  <Link to={"/"} className={classes.root}>
-    {image ? <img src={image} className={classes.postImage} /> : null}
+const BlogCard = ({ classes, image, title, date, excerpt, slug, tags }) => (
+  <div className={classes.root}>
+    <Link to={`/${slug}/`}>
+      {image ? (
+        <Img
+          className={classes.postImage}
+          sizes={image.sizes}
+          backgroundColor={"#eeeeee"}
+        />
+      ) : null}
 
-    <div className={classes.postDate}>{date}</div>
-    <div className={classes.postTitle}>{title}</div>
-    <div
-      className={classes.postDesc}
-      dangerouslySetInnerHTML={{
-        __html: excerpt,
-      }}
-    />
-    <div className={classes.postReadMore}>
-      Read more{" "}
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="18"
-        height="18"
-        viewBox="0 0 24 24"
-        className={classes.icon}
-      >
-        <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
-      </svg>
-    </div>
-  </Link>
+      <div className={classes.postTitle}>{title}</div>
+      <div className={classes.postDate}>{date}</div>
+      <div
+        className={classes.postDesc}
+        dangerouslySetInnerHTML={{
+          __html: excerpt.childMarkdownRemark.excerpt,
+        }}
+      />
+      {tags && <TagList tags={tags} />}
+    </Link>
+  </div>
 );
 
 export default withStyles((theme) => ({

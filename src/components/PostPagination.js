@@ -41,7 +41,6 @@ const PostPagination = (props) => {
             width="18"
             height="18"
             viewBox="0 0 24 24"
-            style={{ color: "#F15953" }}
           >
             <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
           </svg>
@@ -56,15 +55,17 @@ export default withStyles((theme) => ({
     display: "flex",
     alignContent: "center",
     marginTop: "20px",
+    fontFamily:
+      "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
   },
   postButton: {
     display: "flex",
     alignContent: "center",
     justifyContent: "center",
-    backgroundColor: "#FFF4F0",
+    backgroundColor: "#fff",
     fontSize: "12px",
     letterSpacing: ".25px",
-    color: "#F15953",
+    color: theme.colors.primary,
     textDecoration: "none",
     fontWeight: "700",
     padding: "8px 16px",
@@ -77,7 +78,7 @@ export default withStyles((theme) => ({
     marginLeft: "auto",
   },
   arrow: {
-    fill: "#F15953",
+    fill: theme.colors.primary,
   },
   postLink: {
     marginTop: "3px",

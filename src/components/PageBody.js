@@ -18,10 +18,12 @@ export default withStyles((theme) => ({
     color: "#413F48",
     fontSize: "18px",
     lineHeight: "1.6",
-    margin: "48px auto 16px auto",
+    margin: "0px auto 16px auto",
+    fontFamily:
+      "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
 
     "& h1": {
-      color: "#2E2E35",
+      color: theme.colors.black,
       fontWeight: "700",
       letterSpacing: ".2px",
       lineHeight: "1.2",
@@ -53,7 +55,7 @@ export default withStyles((theme) => ({
     },
 
     "& a": {
-      color: "#2E2E35",
+      color: theme.colors.black,
       textDecoration: "underline",
     },
 
