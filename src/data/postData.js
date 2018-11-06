@@ -1,3 +1,4 @@
+// Moved to Contentful 2018-10-05
 import stormpic1 from "../images/stormpic-1.jpg";
 import stormpic2 from "../images/stormpic-2.jpg";
 import stormpic3 from "../images/stormpic-3.jpg";

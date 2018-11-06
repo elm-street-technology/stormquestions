@@ -13,7 +13,7 @@ import BlogCardGrid from "./BlogCardGrid";
 import ContactForm from "./ContactForm";
 import ServiceProviders from "./ServiceProviders";
 
-const Home = ({ classes, posts, tags, test }) => (
+const Home = ({ classes, posts }) => (
   <div className={classes.root}>
     <Header />
     <Hero />
@@ -27,13 +27,13 @@ const Home = ({ classes, posts, tags, test }) => (
       {posts &&
         posts.map(({ node: post }) => (
           <BlogCard
-            tags={tags}
             key={post.id}
             slug={post.slug}
             image={post.heroImage}
             title={post.title}
             date={post.publishDate}
             excerpt={post.body}
+            tags={post.tags}
           />
         ))}
     </BlogCardGrid>

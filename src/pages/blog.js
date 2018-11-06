@@ -1,3 +1,4 @@
+import { graphql } from "gatsby";
 import React, { Component } from "react";
 import withStyles from "elevate-ui/withStyles";
 
@@ -10,7 +11,7 @@ import SEO from "../components/SEO";
 
 class Blog extends Component {
   render() {
-    const { classes, tags, data } = this.props;
+    const { classes, data } = this.props;
     const posts = data.allContentfulPost.edges;
     return (
       <Layout>
@@ -21,13 +22,13 @@ class Blog extends Component {
             <BlogCardGrid>
               {posts.map(({ node: post }) => (
                 <BlogCard
-                  tags={tags}
                   key={post.id}
                   slug={post.slug}
                   image={post.heroImage}
                   title={post.title}
                   date={post.publishDate}
                   excerpt={post.body}
+                  tags={post.tags}
                 />
               ))}
             </BlogCardGrid>
@@ -73,7 +74,7 @@ export const query = graphql`
   }
 `;
 
-export default withStyles((theme) => ({
+export default withStyles(() => ({
   root: {
     display: "flex",
     flexDirection: "column",
@@ -85,17 +86,5 @@ export default withStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     width: "100%",
-  },
-  btnContainer: {
-    display: "flex",
-    justifyContent: "center",
-    maxWidth: "100%",
-  },
-  btn: {
-    color: theme.colors.primary,
-    fontWeight: "600",
-    padding: "16px 80px",
-    border: "2px solid #EF5A57",
-    borderRadius: "8px",
   },
 }))(Blog);
