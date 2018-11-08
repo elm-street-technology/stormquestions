@@ -23,8 +23,8 @@ const BlogCard = ({ classes, image, title, date, excerpt, slug, tags }) => (
           __html: excerpt.childMarkdownRemark.excerpt,
         }}
       />
-      {tags && <TagList tags={tags} />}
     </Link>
+    {tags && <TagList tags={tags} />}
   </div>
 );
 
