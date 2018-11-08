@@ -33,8 +33,14 @@ export default withStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     transition: "all 200ms ease-in-out",
-    textDecoration: "none",
+    fontFamily:
+      "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
+    textDecoration: "none !important",
     "&:hover": {
+      textDecoration: "none !important",
+    },
+
+    "& a": {
       textDecoration: "none !important",
     },
   },
