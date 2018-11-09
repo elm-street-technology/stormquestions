@@ -15,6 +15,7 @@ export default withStyles((theme) => ({
     fontWeight: "800",
     marginTop: "80px",
     marginBottom: "30px",
+    textAlign: "center",
     fontFamily:
       "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
 

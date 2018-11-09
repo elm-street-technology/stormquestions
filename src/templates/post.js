@@ -11,6 +11,7 @@ import PageBody from "../components/PageBody";
 import TagList from "../components/TagList";
 import PostPagination from "../components/PostPagination";
 import SEO from "../components/SEO";
+import withStyles from "elevate-ui/withStyles";
 import PostSocialLinks from "../components/PostSocialLinks";
 
 const PostTemplate = ({
@@ -33,7 +34,7 @@ const PostTemplate = ({
       </Helmet>
       <SEO pagePath={slug} postNode={postNode} postSEO />
 
-      <Container>
+      <Container className={classes.container}>
         <PageTitle>{title}</PageTitle>
         <PageBody body={body} />
         {tags && <TagList tags={tags} />}
@@ -102,4 +103,10 @@ export const query = graphql`
   }
 `;
 
-export default PostTemplate;
+export default withStyles(() => ({
+  container: {
+    maxWidth: "700px",
+    fontFamily:
+      "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
+  },
+}))(PostTemplate);

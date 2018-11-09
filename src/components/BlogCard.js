@@ -23,8 +23,8 @@ const BlogCard = ({ classes, image, title, date, excerpt, slug, tags }) => (
           __html: excerpt.childMarkdownRemark.excerpt,
         }}
       />
-      {tags && <TagList tags={tags} />}
     </Link>
+    {tags && <TagList tags={tags} />}
   </div>
 );
 
@@ -33,8 +33,14 @@ export default withStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     transition: "all 200ms ease-in-out",
-    textDecoration: "none",
+    fontFamily:
+      "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
+    textDecoration: "none !important",
     "&:hover": {
+      textDecoration: "none !important",
+    },
+
+    "& a": {
       textDecoration: "none !important",
     },
   },
