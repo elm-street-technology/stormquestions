@@ -1,6 +1,5 @@
 import React from "react";
 import withStyles from "elevate-ui/withStyles";
-import Header from "./Header";
 import Hero from "./Hero";
 import Introduction from "./Introduction";
 import Resources from "./Resources";
@@ -15,7 +14,6 @@ import ServiceProviders from "./ServiceProviders";
 
 const Home = ({ classes, posts }) => (
   <div className={classes.root}>
-    <Header />
     <Hero />
     <Introduction />
     <Resources />
