@@ -6,6 +6,8 @@ import Home from "../components/Home";
 class Storm extends Component {
   render() {
     const { data } = this.props;
+    const homepage = data.contentfulHome;
+    console.log(homepage);
     const posts = data.allContentfulPost.edges;
     return (
       <Layout>
@@ -17,6 +19,41 @@ class Storm extends Component {
 
 export const query = graphql`
   query indexQuery {
+    contentfulHome(contentfulid: { eq: "homepage" }) {
+      introHeadline
+      introductionText {
+        childMarkdownRemark {
+          html
+        }
+      }
+      resourceHeadline
+      resourceText {
+        childMarkdownRemark {
+          html
+        }
+      }
+      providers {
+        title
+        description {
+          childMarkdownRemark {
+            html
+          }
+        }
+      }
+      faq {
+        id
+        title {
+          childMarkdownRemark {
+            html
+          }
+        }
+        description {
+          childMarkdownRemark {
+            html
+          }
+        }
+      }
+    }
     allContentfulPost(
       limit: 1000
       sort: { fields: [publishDate], order: DESC }
