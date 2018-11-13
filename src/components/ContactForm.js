@@ -144,7 +144,7 @@ export default withStyles((theme) => ({
     maxWidth: "500px",
     backgroundColor: "#FFF !important",
     margin: "0 auto",
-    padding: "60px 0px",
+    padding: "60px 12px",
   },
   link: {
     color: "inherit",
@@ -187,8 +187,9 @@ export default withStyles((theme) => ({
   subHeading: {
     color: theme.colors.gray600,
     fontSize: "21px",
-    padding: "0px 14px 40px 14px",
-    maxWidth: "520px",
+    padding: "0px 0px 40px 0px",
+    margin: "auto",
     lineHeight: "1.4",
+    textAlign: "center",
   },
 }))(ContactForm);
