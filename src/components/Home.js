@@ -58,11 +58,6 @@ const styles = (theme) => ({
     display: "flex",
     flexDirection: "column",
     width: "100%",
-    borderTop: {
-      color: `${theme.colors.primary}`,
-      width: 6,
-      style: "solid",
-    },
   },
 });
 

@@ -1,15 +1,16 @@
 import React from "react";
 import withStyles from "elevate-ui/withStyles";
+import Link from "gatsby-link";
 import logo from "../images/logo.png";
 
 const Header = ({ classes }) => (
   <div className={classes.root}>
     <div className={classes.container}>
       <div className={classes.inner}>
-        <div className={classes.logo}>
+        <Link to="/" className={classes.logo}>
           <img src={logo} alt={"Brand logo"} className={classes.logoImage} />
           <div className={classes.logoText}>StormQuestions</div>
-        </div>
+        </Link>
         <div className={classes.callToAction}>
           <a
             href="https://www.gofundme.com/stormquestions"
@@ -29,6 +30,12 @@ const styles = (theme) => ({
   root: {
     display: "flex",
     width: "100%",
+    backgroundColor: "#fff",
+    borderTop: {
+      color: `${theme.colors.primary}`,
+      width: 4,
+      style: "solid",
+    },
   },
   container: {
     padding: "0px 14px 0px",
@@ -45,6 +52,7 @@ const styles = (theme) => ({
   logo: {
     display: "flex",
     alignItems: "center",
+    textDecoration: "none",
   },
   callToAction: {
     display: "flex",
@@ -60,12 +68,9 @@ const styles = (theme) => ({
       marginRight: "26px",
     },
   },
-  link: {
-    textDecoration: "none",
-    color: "inherit",
-  },
   button: {
     color: theme.colors.primary,
+    textDecoration: "none",
     fontSize: "14px",
     fontWeight: "700",
     letterSpacing: ".5px",
