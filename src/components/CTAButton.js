@@ -29,6 +29,7 @@ export default withStyles((theme) => ({
   button: {
     color: "#fff",
     fontWeight: "700",
+    fontSize: "18px",
     letterSpacing: ".5px",
     backgroundColor: theme.colors.primary,
     borderRadius: "32px",

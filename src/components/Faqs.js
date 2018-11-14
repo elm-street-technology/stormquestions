@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import FaqsHeading from "./FaqsHeading";
 import FaqCard from "./FaqCard";
-import faqData from "../data/faqData";
 import withStyles from "elevate-ui/withStyles";
 
 class Faqs extends Component {
@@ -20,22 +19,17 @@ class Faqs extends Component {
   };
 
   render() {
-    const { classes } = this.props;
+    const { classes, faqs } = this.props;
     const { availableFaqs } = this.state;
     return (
       <div className={classes.container}>
         <div className={classes.faqContainer}>
           <FaqsHeading />
-          {faqData.slice(0, availableFaqs).map((faq, i) => (
-            <FaqCard
-              key={i}
-              tagline={faq.tagline}
-              title={faq.title}
-              description={faq.description}
-            />
+          {faqs.slice(0, availableFaqs).map((faq, i) => (
+            <FaqCard key={i} title={faq.title} description={faq.description} />
           ))}
           <div className={classes.btnContainer}>
-            {faqData.length > availableFaqs ? (
+            {faqs.length > availableFaqs ? (
               <button
                 className={classes.loadMoreBtn}
                 onClick={this.handleLoadFaqs}

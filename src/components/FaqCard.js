@@ -4,13 +4,16 @@ import withStyles from "elevate-ui/withStyles";
 const FaqCard = ({ classes, tagline, title, description }) => (
   <div className={classes.root}>
     <div className={classes.container}>
-      <h1 className={classes.heading}>
-        {tagline} <span className={classes.title}>{title}</span>?
-      </h1>
+      <h1
+        className={classes.heading}
+        dangerouslySetInnerHTML={{
+          __html: title.childMarkdownRemark.html,
+        }}
+      />
       <div
         className={classes.description}
         dangerouslySetInnerHTML={{
-          __html: description,
+          __html: description.childMarkdownRemark.html,
         }}
       />
     </div>
@@ -27,6 +30,7 @@ const styles = (theme) => ({
       "0 16px 16px rgba(103,110,144,.05), 0 8px 8px rgba(103,110,144,.05), 0 4px 4px rgba(103,110,144,.05), 0 2px 2px rgba(103,110,144,.05)",
     borderRadius: "8px",
     margin: "14px",
+    transition: "all 2s",
   },
   container: {
     display: "flex",
@@ -37,6 +41,11 @@ const styles = (theme) => ({
     color: theme.colors.black,
     fontSize: "20px",
     paddingBottom: "16px",
+
+    "& strong": {
+      fontWeight: "700",
+      color: theme.colors.primary,
+    },
   },
   title: {
     color: theme.colors.primary,
