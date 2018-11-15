@@ -17,6 +17,26 @@ class Storm extends Component {
 export const query = graphql`
   query indexQuery {
     contentfulHome(contentfulid: { eq: "homepage" }) {
+      heroTop {
+        childMarkdownRemark {
+          html
+        }
+      }
+      heroBottom {
+        childMarkdownRemark {
+          html
+        }
+      }
+      primaryCta {
+        childMarkdownRemark {
+          html
+        }
+      }
+      secondaryCta {
+        childMarkdownRemark {
+          html
+        }
+      }
       introHeadline
       introText {
         childMarkdownRemark {

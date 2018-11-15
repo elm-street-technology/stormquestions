@@ -17,14 +17,14 @@ const Home = ({ classes, data }) => {
   const posts = data.allContentfulPost.edges;
   return (
     <div className={classes.root}>
-      <Hero />
+      <Hero heroTop={homepage.heroTop} heroBottom={homepage.heroBottom} />
       <Introduction title={homepage.introHeadline} body={homepage.introText} />
       <Resources
         title={homepage.resourceHeadline}
         body={homepage.resourceText}
       />
       <Faqs faqs={homepage.faq} />
-      <PrimaryCTA />
+      <PrimaryCTA text={homepage.primaryCta} />
       <ServiceProviders providers={homepage.providers} />
       <BlogHeading />
       <BlogCardGrid>
@@ -41,7 +41,7 @@ const Home = ({ classes, data }) => {
             />
           ))}
       </BlogCardGrid>
-      <SecondaryCTA />
+      <SecondaryCTA text={homepage.secondaryCta} />
       <ContactForm />
     </div>
   );
