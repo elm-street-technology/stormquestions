@@ -55,6 +55,7 @@ export default withStyles((theme) => ({
     display: "flex",
     alignContent: "center",
     marginTop: "20px",
+    marginBottom: "120px",
     fontFamily:
       "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
   },
