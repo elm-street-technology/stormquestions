@@ -108,5 +108,8 @@ export default withStyles(() => ({
     maxWidth: "700px",
     fontFamily:
       "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
+    minHeight: "100%",
+    marginBottom: "90px",
+    marginTop: "40px",
   },
 }))(PostTemplate);

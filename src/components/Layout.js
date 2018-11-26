@@ -1,6 +1,7 @@
 import React from "react";
 import ThemeProvider from "elevate-ui/ThemeProvider";
 import Header from "./Header";
+import Footer from "./Footer";
 
 import "../styles/fonts.css";
 
@@ -19,6 +20,7 @@ const Layout = ({ children }) => {
     >
       <Header />
       {children}
+      <Footer />
     </ThemeProvider>
   );
 };
