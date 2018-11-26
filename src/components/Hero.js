@@ -2,6 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import withStyles from "elevate-ui/withStyles";
 import CTAButton from "./CTAButton";
+import topography from "../images/topography.svg";
 
 const Hero = ({ classes, className, heroTop, heroBottom }) => (
   <div className={classNames(classes.root, className)}>
@@ -56,6 +57,7 @@ const styles = (theme) => ({
     [theme.breakpoints[900]]: {
       padding: "100px 14px",
     },
+    backgroundImage: `url('${topography}')`,
   },
   container: {
     padding: "50px 14px",
