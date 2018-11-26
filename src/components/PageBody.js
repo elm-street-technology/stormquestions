@@ -3,11 +3,11 @@ import classNames from "classnames";
 import withStyles from "elevate-ui/withStyles";
 import "prismjs/themes/prism.css";
 
-const PageBody = (props) => {
+const PageBody = ({ classes, className, body, color, linkColor }) => {
   return (
     <div
-      className={classNames(props.classes.post, props.className)}
-      dangerouslySetInnerHTML={{ __html: props.body.childMarkdownRemark.html }}
+      className={classNames(classes.post, className)}
+      dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.html }}
     />
   );
 };
@@ -15,8 +15,9 @@ const PageBody = (props) => {
 export default withStyles((theme) => ({
   post: {
     width: "100%",
-    color: "#413F48",
-    fontSize: "18px",
+    color: (props) => props.color || theme.colors.black,
+    fontSize: "21px",
+    fontWeight: "400",
     lineHeight: "1.6",
     margin: "0px auto 16px auto",
     fontFamily:
@@ -55,7 +56,7 @@ export default withStyles((theme) => ({
     },
 
     "& a": {
-      color: theme.colors.black,
+      color: (props) => props.linkColor || theme.colors.primary,
       textDecoration: "underline",
     },
 
@@ -94,7 +95,7 @@ export default withStyles((theme) => ({
 
     "& p": {
       marginTop: "4px",
-      marginBottom: "8px",
+      marginBottom: "28px",
     },
 
     "& img": {

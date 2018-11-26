@@ -1,19 +1,18 @@
 import React from "react";
 import withStyles from "elevate-ui/withStyles";
-import serviceData from "../data/serviceData";
 
-const ServiceProviders = ({ classes }) => (
+const ServiceProviders = ({ classes, providers }) => (
   <div className={classes.root}>
     <div className={classes.container}>
       <h1 className={classes.heading}>Recommended Service Providers</h1>
-      {serviceData.map((service, i) => {
+      {providers.map((provider, i) => {
         return (
           <div key={i}>
-            <h2 className={classes.subHeading}>{service.title}</h2>
+            <h2 className={classes.subHeading}>{provider.title}</h2>
             <div
               className={classes.paragraph}
               dangerouslySetInnerHTML={{
-                __html: service.description,
+                __html: provider.information.childMarkdownRemark.html,
               }}
             />
           </div>

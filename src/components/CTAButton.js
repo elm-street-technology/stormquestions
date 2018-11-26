@@ -29,6 +29,9 @@ export default withStyles((theme) => ({
   button: {
     color: "#fff",
     fontWeight: "700",
+    fontSize: "18px",
+    fontFamily:
+      "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
     letterSpacing: ".5px",
     backgroundColor: theme.colors.primary,
     borderRadius: "32px",

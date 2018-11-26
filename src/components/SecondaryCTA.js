@@ -1,13 +1,14 @@
 import React from "react";
 import withStyles from "elevate-ui/withStyles";
 
-const PrimaryCTA = ({ classes, tagline, title, description }) => (
+const PrimaryCTA = ({ classes, text }) => (
   <div className={classes.root}>
-    <div className={classes.heading}>Receive Donation Funds</div>
-    <div className={classes.subHeading}>
-      Send us a private message on GoFundMe to appeal for receiving donation
-      funds.
-    </div>
+    <div
+      className={classes.text}
+      dangerouslySetInnerHTML={{
+        __html: text.childMarkdownRemark.html,
+      }}
+    />
     <a
       href="https://www.gofundme.com/storm-questions-urgent-needs&rcid=r01-153962467248-cb2db2db02294c3f&pc=ot_co_campmgmt_w"
       target="_blank"
@@ -28,19 +29,21 @@ const styles = (theme) => ({
     padding: "50px 0px",
     backgroundColor: theme.colors.gray100,
   },
-  heading: {
-    color: theme.colors.black,
-    fontSize: "26px",
-    fontFamily: "League Spartan",
-    paddingBottom: "4px",
-    lineHeight: "1.4",
-  },
-  subHeading: {
-    color: theme.colors.gray600,
-    fontSize: "21px",
-    padding: "0px 14px 20px 14px",
-    maxWidth: "520px",
-    lineHeight: "1.4",
+  text: {
+    "& h1": {
+      color: theme.colors.black,
+      fontSize: "26px",
+      fontFamily: "League Spartan",
+      paddingBottom: "4px",
+      lineHeight: "1.4",
+    },
+    "& p": {
+      color: theme.colors.gray600,
+      fontSize: "21px",
+      padding: "0px 14px 20px 14px",
+      maxWidth: "520px",
+      lineHeight: "1.4",
+    },
   },
   button: {
     color: "#fff",

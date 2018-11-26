@@ -12,33 +12,40 @@ import BlogCardGrid from "./BlogCardGrid";
 import ContactForm from "./ContactForm";
 import ServiceProviders from "./ServiceProviders";
 
-const Home = ({ classes, posts }) => (
-  <div className={classes.root}>
-    <Hero />
-    <Introduction />
-    <Resources />
-    <Faqs />
-    <PrimaryCTA />
-    <ServiceProviders />
-    <BlogHeading />
-    <BlogCardGrid>
-      {posts &&
-        posts.map(({ node: post }) => (
-          <BlogCard
-            key={post.id}
-            slug={post.slug}
-            image={post.heroImage}
-            title={post.title}
-            date={post.publishDate}
-            excerpt={post.body}
-            tags={post.tags}
-          />
-        ))}
-    </BlogCardGrid>
-    <SecondaryCTA />
-    <ContactForm />
-  </div>
-);
+const Home = ({ classes, data }) => {
+  const homepage = data.contentfulHome;
+  const posts = data.allContentfulPost.edges;
+  return (
+    <div className={classes.root}>
+      <Hero heroTop={homepage.heroTop} heroBottom={homepage.heroBottom} />
+      <Introduction title={homepage.introHeadline} body={homepage.introText} />
+      <Resources
+        title={homepage.resourceHeadline}
+        body={homepage.resourceText}
+      />
+      <Faqs faqs={homepage.faq} />
+      <PrimaryCTA text={homepage.primaryCta} />
+      <ServiceProviders providers={homepage.providers} />
+      <BlogHeading />
+      <BlogCardGrid>
+        {posts &&
+          posts.map(({ node: post }) => (
+            <BlogCard
+              key={post.id}
+              slug={post.slug}
+              image={post.heroImage}
+              title={post.title}
+              date={post.publishDate}
+              excerpt={post.body}
+              tags={post.tags}
+            />
+          ))}
+      </BlogCardGrid>
+      <SecondaryCTA text={homepage.secondaryCta} />
+      <ContactForm />
+    </div>
+  );
+};
 
 const styles = (theme) => ({
   "@global": {

@@ -1,44 +1,14 @@
 import React from "react";
 import withStyles from "elevate-ui/withStyles";
 import CTAButton from "./CTAButton";
+import PageBody from "./PageBody";
 
-const Introduction = ({ classes }) => (
+const Introduction = ({ classes, title, body }) => (
   <div className={classes.root}>
     <div className={classes.container}>
       <div className={classes.inner}>
-        <h1 className={classes.heading}>Why We're here</h1>
-        <p className={classes.paragraph}>
-          We are all impacted by natural disasters, whether directly or
-          indirectly. <span className={classes.bold}>Storm Questions</span>{" "}
-          wants to provide a resource for you to ask questions and get answers.
-          We also provide a list of resources to help you get through a storm’s
-          aftermath.
-        </p>
-        <p className={classes.paragraph}>
-          We are aggregating{" "}
-          <span className={classes.bold}>industry experts</span> including
-          attorneys, public insurance adjusters, contractors, roofers,
-          legislators, members from offices of emergency management, FEMA
-          directors, etc.
-        </p>
-        <p className={classes.paragraph}>
-          The purpose of this site is to provide everyone that experienced storm
-          damage or related business issues with a forum where you may ask
-          questions and get the{" "}
-          <span style={{ fontStyle: "italic" }}>most accurate</span>, up-to-date{" "}
-          answers from the people that know best.
-        </p>
-        <p className={classes.paragraph}>
-          Please <span className={classes.underline}>check back often</span> as
-          we will also be adding information for where you can obtain loans and
-          financial resources as you make repairs and recover from the storm.
-        </p>
-        <p className={classes.paragraph}>
-          In addition to resources and information for homeowners, business
-          owners will also have information to assist in learning more about
-          business interruption, loss of use, etc., and other issues that impact
-          your revenue and your business.
-        </p>
+        <h1 className={classes.heading}>{title}</h1>
+        <PageBody color={"#465568"} body={body} />
         <h3 className={classes.closing}>
           <CTAButton />
         </h3>

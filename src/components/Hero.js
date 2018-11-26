@@ -3,27 +3,24 @@ import classNames from "classnames";
 import withStyles from "elevate-ui/withStyles";
 import CTAButton from "./CTAButton";
 
-const Hero = ({ classes, className }) => (
+const Hero = ({ classes, className, heroTop, heroBottom }) => (
   <div className={classNames(classes.root, className)}>
     <div className={classes.container}>
       <div className={classes.inner}>
         <div className={classes.heroLeft}>
-          <h1 className={classes.heading}>
-            We want to <span className={classes.headingEnd}>help.</span>
-          </h1>
+          <div
+            className={classes.heroTop}
+            dangerouslySetInnerHTML={{
+              __html: heroTop.childMarkdownRemark.html,
+            }}
+          />
           <div className={classes.headingBottomContainer}>
-            <p className={classes.subHeading}>
-              Everything we know about storms is at your disposal.
-            </p>
-            <p className={classes.headingBottom}>
-              <span className={classes.headingBottomTop}>Stay informed.</span>
-            </p>
-            <p
-              style={{ marginBottom: "30px" }}
-              className={classes.headingBottom}
-            >
-              Keep you and your family safe.
-            </p>
+            <div
+              className={classes.heroBottom}
+              dangerouslySetInnerHTML={{
+                __html: heroBottom.childMarkdownRemark.html,
+              }}
+            />
             <CTAButton />
           </div>
         </div>
@@ -36,18 +33,13 @@ const Hero = ({ classes, className }) => (
             Sorry, your browser doesn't support embedded videos.
           </iframe>
           <div className={classes.headingBottomMobileContainer}>
-            <p className={classes.headingBottomMobile}>
-              <span className={classes.headingBottomTopMobile}>
-                Stay informed.
-              </span>
-            </p>
-            <p
-              style={{ marginBottom: "20px" }}
-              className={classes.headingBottomMobile}
-            >
-              Keep you and your family safe.
-            </p>
-            <CTAButton className={classes.headingBottomMobile} />
+            <div
+              className={classes.heroBottomMobile}
+              dangerouslySetInnerHTML={{
+                __html: heroBottom.childMarkdownRemark.html,
+              }}
+            />
+            <CTAButton />
           </div>
         </div>
       </div>
@@ -59,6 +51,7 @@ const styles = (theme) => ({
   root: {
     width: "100%",
     backgroundColor: theme.colors.gray100,
+    fontFamily: "League Spartan",
 
     [theme.breakpoints[900]]: {
       padding: "100px 14px",
@@ -84,11 +77,70 @@ const styles = (theme) => ({
       textAlign: "left",
     },
   },
+  heroTop: {
+    "& h1": {
+      color: theme.colors.black,
+      fontSize: "26px",
+      paddingBottom: "16px",
+      lineHeight: "1.4",
+
+      [theme.breakpoints[900]]: {
+        fontSize: "34px",
+      },
+    },
+    "& p": {
+      color: theme.colors.gray600,
+      fontFamily: "League Spartan",
+      fontSize: "18px",
+      lineHeight: "1.5",
+      paddingBottom: "20px",
+      display: "none",
+
+      [theme.breakpoints[900]]: {
+        textAlign: "left",
+        paddingBottom: "80px",
+        maxWidth: "320px",
+        display: "flex",
+      },
+    },
+    "& strong": {
+      color: theme.colors.primary,
+    },
+  },
+  heroBottom: {
+    "& h2": {
+      fontSize: "24px",
+      color: theme.colors.black,
+      paddingBottom: "10px",
+    },
+    "& p": {
+      color: theme.colors.gray600,
+      fontSize: "18px",
+      lineHeight: "1.5",
+      maxWidth: "320px",
+      paddingBottom: "30px",
+    },
+  },
+  heroBottomMobile: {
+    "& h2": {
+      fontSize: "24px",
+      paddingTop: "20px",
+      paddingBottom: "8px",
+      color: theme.colors.black,
+    },
+    "& p": {
+      color: theme.colors.gray600,
+      fontSize: "18px",
+      lineHeight: "1.5",
+      justifyContent: "center",
+      display: "flex",
+      paddingBottom: "20px",
+    },
+  },
   heroLeft: {
     paddingTop: "20px",
     paddingRight: "12px",
   },
-
   video: {
     maxWidth: "600px",
     width: "100%",
@@ -105,51 +157,6 @@ const styles = (theme) => ({
       paddingBottom: "0px",
       width: "600px",
     },
-  },
-  heading: {
-    color: theme.colors.black,
-    fontFamily: "League Spartan",
-    fontSize: "26px",
-    paddingBottom: "16px",
-
-    [theme.breakpoints[900]]: {
-      fontSize: "34px",
-    },
-  },
-  headingEnd: {
-    color: theme.colors.primary,
-  },
-  subHeading: {
-    color: theme.colors.gray600,
-    fontFamily: "League Spartan",
-    fontSize: "18px",
-    lineHeight: "1.5",
-    maxWidth: "320px",
-    paddingBottom: "80px",
-  },
-  headingBottom: {
-    color: theme.colors.gray600,
-    fontFamily: "League Spartan",
-    fontSize: "18px",
-    lineHeight: "1.5",
-    maxWidth: "320px",
-  },
-  headingBottomTop: {
-    fontSize: "24px",
-    color: theme.colors.black,
-  },
-  headingBottomMobile: {
-    color: theme.colors.gray600,
-    fontFamily: "League Spartan",
-    fontSize: "18px",
-    lineHeight: "1.5",
-    justifyContent: "center",
-    display: "flex",
-  },
-  headingBottomTopMobile: {
-    fontSize: "24px",
-    paddingTop: "20px",
-    color: theme.colors.black,
   },
   headingBottomContainer: {
     marginBottom: "30px",
