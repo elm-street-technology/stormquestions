@@ -2,6 +2,10 @@ import React from "react";
 import ThemeProvider from "elevate-ui/ThemeProvider";
 import Header from "./Header";
 import Footer from "./Footer";
+import Helmet from "react-helmet";
+import favicon from "../images/favicon.png";
+
+import config from "../utils/siteConfig";
 
 import "../styles/fonts.css";
 
@@ -18,6 +22,10 @@ const Layout = ({ children }) => {
         },
       }}
     >
+      <Helmet>
+        <title>{config.siteTitle}</title>
+        <link rel="icon" href={favicon} />
+      </Helmet>
       <Header />
       {children}
       <Footer />
