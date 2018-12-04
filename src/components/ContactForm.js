@@ -27,13 +27,15 @@ class ContactForm extends Component {
             margin: "24px auto",
           }}
         >
-          <Alert color="success">Thank You!</Alert>
+          <Alert color="success">Thank You! We will be in touch shortly.</Alert>
         </div>
       );
     } else if (formState === "error") {
       return (
         <div style={{ maxWidth: "400px", margin: "24px auto" }}>
-          <Alert color="error">An error occurred.</Alert>
+          <Alert color="error">
+            An error occurred. Please try again later.
+          </Alert>
         </div>
       );
     }
@@ -62,34 +64,17 @@ class ContactForm extends Component {
             })
           }
           onSubmit={(values, { setSubmitting }) => {
-            const body = {
-              ...values,
-              roleOther: values.role === "Other" ? values.roleOther : "", // Just in case the user had typed in roleOther then changed their role to something else
-            };
-            return fetch(
-              "https://relegate.herokuapp.com/marketing/request-a-demo",
-              {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json; charset=utf-8",
-                },
-                body: JSON.stringify(body),
-              }
-            )
-              .then((response) => response.json())
-              .then((res) => {
-                if (res.message === "ok") {
-                  this.setState({ formState: "success" });
-                } else {
-                  this.setState({ formState: "error" });
-                }
-              })
-              .catch((err) => {
-                this.setState({ formState: "error" });
-              });
+            // Manually submit the form using a regular form POST rather than AJAX
+            document.getElementById("contact-form").submit();
           }}
           render={({ values, isSubmitting }) => (
-            <Form noValidate>
+            <Form
+              noValidate
+              id="contact-form"
+              name="contact"
+              method="post"
+              data-netlify="true"
+            >
               <div className={classes.topRow}>
                 <Field
                   id="firstname"
@@ -121,6 +106,7 @@ class ContactForm extends Component {
                 className={classes.field}
                 type="tel"
               />
+              <input type="hidden" name="form-name" value="contact" />
               <button
                 type="submit"
                 className={classes.signUpBtn}
