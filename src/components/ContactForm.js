@@ -65,12 +65,12 @@ class ContactForm extends Component {
           }
           onSubmit={(values, { setSubmitting }) => {
             // Manually submit the form using a regular form POST rather than AJAX
-            document.getElementById("contact-form").submit();
+            document.getElementById("contact").submit();
           }}
           render={({ values, isSubmitting }) => (
             <Form
               noValidate
-              id="contact-form"
+              id="contact"
               name="contact"
               method="post"
               data-netlify="true"
