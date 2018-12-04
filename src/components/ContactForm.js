@@ -4,6 +4,7 @@ import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import Alert from "elevate-ui/Alert";
 import Input from "elevate-ui/Input";
+import Textarea from "elevate-ui/Textarea";
 import withStyles from "elevate-ui/withStyles";
 
 const encode = (data) => {
@@ -58,6 +59,7 @@ class ContactForm extends Component {
             lastname: "",
             email: "",
             phone: "",
+            message: "",
           }}
           validationSchema={() =>
             Yup.object().shape({
@@ -67,6 +69,7 @@ class ContactForm extends Component {
                 .email("Invalid email address")
                 .required("Email is required"),
               phone: Yup.string().required("Phone is required"),
+              message: Yup.string(),
             })
           }
           onSubmit={(values, { setSubmitting }) => {
@@ -123,6 +126,13 @@ class ContactForm extends Component {
                 component={Input}
                 className={classes.field}
                 type="tel"
+              />
+              <Field
+                id="message"
+                name="message"
+                label="Message"
+                component={Textarea}
+                className={classes.field}
               />
               <button
                 type="submit"
