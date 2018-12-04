@@ -6,6 +6,12 @@ import Alert from "elevate-ui/Alert";
 import Input from "elevate-ui/Input";
 import withStyles from "elevate-ui/withStyles";
 
+const encode = (data) => {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+};
+
 class ContactForm extends Component {
   constructor(props) {
     super(props);
@@ -65,7 +71,19 @@ class ContactForm extends Component {
           }
           onSubmit={(values, { setSubmitting }) => {
             // Manually submit the form using a regular form POST rather than AJAX
-            document.getElementById("contact").submit();
+            // document.getElementById("contact").submit();
+            fetch("/", {
+              method: "POST",
+              headers: { "Content-Type": "application/x-www-form-urlencoded" },
+              body: encode({ "form-name": "contact", ...values }),
+            })
+              .then(() => {
+                this.setState({ formState: "success" });
+              })
+              .catch((error) => {
+                console.error(error);
+                this.setState({ formState: "error" });
+              });
           }}
           render={({ values, isSubmitting }) => (
             <Form
@@ -106,7 +124,6 @@ class ContactForm extends Component {
                 className={classes.field}
                 type="tel"
               />
-              <input type="hidden" name="form-name" value="contact" />
               <button
                 type="submit"
                 className={classes.signUpBtn}
