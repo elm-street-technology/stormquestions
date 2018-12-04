@@ -72,7 +72,7 @@ class ContactForm extends Component {
           onSubmit={(values, { setSubmitting }) => {
             // Manually submit the form using a regular form POST rather than AJAX
             // document.getElementById("contact").submit();
-            fetch("/", {
+            fetch("/?no-cache=1", {
               method: "POST",
               headers: { "Content-Type": "application/x-www-form-urlencoded" },
               body: encode({ "form-name": "contact", ...values }),
